@@ -1,0 +1,59 @@
+.container {
+  display: flex;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.summaryCard, .strengthsCard {
+  flex: 1;
+}
+
+h3 {
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  color: var(--accent-color);
+}
+
+p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: var(--text-secondary);
+  margin-bottom: 1.5rem;
+}
+
+.highlight {
+  margin-top: 2rem;
+  padding: 1rem;
+  background: rgba(59, 130, 246, 0.1);
+  border-left: 4px solid var(--accent-color);
+  border-radius: 0 10px 10px 0;
+  color: var(--text-primary);
+  font-weight: 500;
+}
+
+.badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.badge {
+  padding: 0.6rem 1.2rem;
+  background: var(--bg-tertiary);
+  color: var(--text-primary);
+  border-radius: 20px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  box-shadow: var(--shadow-sm);
+  cursor: default;
+  transition: all 0.3s ease;
+  border: 1px solid var(--border-color);
+}
+
+@media (max-width: 968px) {
+  .container {
+    flex-direction: column;
+  }
+}
