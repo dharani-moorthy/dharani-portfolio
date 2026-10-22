@@ -3,7 +3,7 @@ import Particles from '@tsparticles/react';
 import { loadSlim } from '@tsparticles/slim';
 import { TypeAnimation } from 'react-type-animation';
 import { motion } from 'framer-motion';
-import { FiGithub, FiLinkedin, FiMail, FiArrowRight, FiSend } from 'react-icons/fi';
+import { FiGithub, FiLinkedin, FiMail, FiArrowRight, FiDownload, FiSend } from 'react-icons/fi';
 import { SiWhatsapp, SiLeetcode } from 'react-icons/si';
 import styles from './Hero.module.css';
 import { Link } from 'react-scroll';
@@ -100,6 +100,9 @@ const Hero = () => {
             <Link to="projects" smooth={true} duration={500} className={`${styles.btn} ${styles.secondaryBtn}`}>
               View Projects <FiArrowRight className={styles.btnIcon} />
             </Link>
+            <a href="/resume.pdf" download="Dharani_Resume.pdf" className={`${styles.btn} ${styles.outlineBtn}`}>
+              Resume <FiDownload className={styles.btnIcon} />
+            </a>
           </motion.div>
 
           <motion.div variants={itemVariants} className={styles.socialsGroup}>
