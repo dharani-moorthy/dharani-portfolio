@@ -81,7 +81,6 @@ const Hero = () => {
                   'Robotics & Automation', 2200,
                   'Full Stack Java Development', 2200,
                   'Modern Web Applications', 2200,
-                  'Control Systems & IoT', 2200,
                 ]}
                 wrapper="span"
                 speed={50}
