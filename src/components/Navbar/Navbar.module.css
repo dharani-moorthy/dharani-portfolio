@@ -38,12 +38,30 @@
   padding: 0 5%;
 }
 
-.logo {
+.logo a {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
   font-family: 'Outfit', sans-serif;
   font-size: 1.5rem;
   font-weight: 800;
   cursor: pointer;
   letter-spacing: -0.02em;
+  color: var(--text-primary);
+  text-decoration: none;
+}
+
+.logoIcon {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  object-fit: contain;
+  box-shadow: 0 2px 8px rgba(37, 99, 235, 0.25);
+  transition: transform 0.25s ease;
+}
+
+.logo a:hover .logoIcon {
+  transform: rotate(-6deg) scale(1.08);
 }
 
 .accent {

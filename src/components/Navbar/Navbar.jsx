@@ -39,6 +39,7 @@ const Navbar = () => {
       <div className={styles.navContainer}>
         <div className={styles.logo}>
           <Link to="home" smooth={true} duration={500}>
+            <img src="/logo.svg" alt="Dharani Logo" className={styles.logoIcon} />
             Dharani<span className={styles.accent}>.</span>
           </Link>
         </div>

@@ -17,9 +17,24 @@
   margin-bottom: 3.5rem;
 }
 
+.brandLogo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.8rem;
+}
+
+.brandLogo .logoIcon {
+  width: 36px;
+  height: 36px;
+  border-radius: 9px;
+  object-fit: contain;
+  box-shadow: 0 2px 8px rgba(37, 99, 235, 0.25);
+}
+
 .brand h2 {
   font-size: 1.8rem;
-  margin-bottom: 0.8rem;
+  margin-bottom: 0;
   font-family: 'Outfit', sans-serif;
   color: var(--text-primary);
   letter-spacing: -0.02em;

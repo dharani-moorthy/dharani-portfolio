@@ -9,7 +9,10 @@ const Footer = () => {
       <div className={styles.container}>
         <div className={styles.top}>
           <div className={styles.brand}>
-            <h2>Dharani<span>.</span></h2>
+            <div className={styles.brandLogo}>
+              <img src="/logo.svg" alt="Dharani Logo" className={styles.logoIcon} />
+              <h2>Dharani<span>.</span></h2>
+            </div>
             <p>Building scalable web applications, robotics solutions, and software systems.</p>
           </div>
           
