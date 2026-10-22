@@ -18,12 +18,12 @@ const Skills = () => {
     {
       title: 'Web Development',
       skills: [
-        { name: 'HTML/CSS/JS', level: 95 },
+        { name: 'HTML / CSS / JS', level: 95 },
         { name: 'React & Vite', level: 85 },
-        { name: 'Responsive Design', level: 90 },
-        { name: 'REST API', level: 80 },
-        { name: 'Frontend Dev', level: 90 },
-        { name: 'Backend Dev', level: 75 }
+        { name: 'Responsive UI Design', level: 90 },
+        { name: 'REST APIs', level: 80 },
+        { name: 'Frontend Architecture', level: 90 },
+        { name: 'Backend Integration', level: 75 }
       ]
     },
     {
@@ -43,14 +43,23 @@ const Skills = () => {
         { name: 'Raspberry Pi', level: 80 },
         { name: 'CATIA V5', level: 75 },
         { name: 'Fusion 360', level: 75 },
-        { name: '3D Printing', level: 85 }
+        { name: '3D Printing Prototyping', level: 85 }
       ]
     }
   ];
 
+  const cardVariants = {
+    hidden: { opacity: 0, y: 25 },
+    visible: { 
+      opacity: 1, 
+      y: 0, 
+      transition: { duration: 0.5, ease: 'easeOut' } 
+    }
+  };
+
   return (
     <section id="skills" className="section">
-      <h2 className="section-title">My Skills</h2>
+      <h2 className="section-title">Technical Skills</h2>
       
       <motion.div 
         className={styles.grid}
@@ -60,7 +69,7 @@ const Skills = () => {
         variants={{
           hidden: {},
           visible: {
-            transition: { staggerChildren: 0.15 }
+            transition: { staggerChildren: 0.12 }
           }
         }}
       >
@@ -68,16 +77,8 @@ const Skills = () => {
           <motion.div 
             key={catIndex} 
             className={`glass ${styles.categoryCard}`}
-            variants={{
-              hidden: { opacity: 0, x: -30, skewX: 10 },
-              visible: { 
-                opacity: 1, 
-                x: 0,
-                skewX: 0,
-                transition: { type: 'spring', stiffness: 300, damping: 15 }
-              }
-            }}
-            whileHover={{ scale: 1.02, x: 5, y: -5 }}
+            variants={cardVariants}
+            whileHover={{ y: -5, transition: { duration: 0.2 } }}
           >
             <h3>{category.title}</h3>
             <div className={styles.skillsList}>
@@ -85,14 +86,14 @@ const Skills = () => {
                 <div key={index} className={styles.skillItem}>
                   <div className={styles.skillHeader}>
                     <span>{skill.name}</span>
-                    <span>{skill.level}%</span>
+                    <span className={styles.percent}>{skill.level}%</span>
                   </div>
                   <div className={styles.progressTrack}>
                     <motion.div 
                       className={styles.progressBar}
                       initial={{ width: 0 }}
                       whileInView={{ width: `${skill.level}%` }}
-                      transition={{ duration: 1, delay: 0.3 }}
+                      transition={{ duration: 1, delay: 0.2, ease: 'easeOut' }}
                       viewport={{ once: true }}
                     ></motion.div>
                   </div>

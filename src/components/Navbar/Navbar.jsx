@@ -11,7 +11,7 @@ const Navbar = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 50) {
+      if (window.scrollY > 30) {
         setIsScrolled(true);
       } else {
         setIsScrolled(false);
@@ -35,7 +35,7 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className={`${styles.navbar} ${isScrolled ? styles.scrolled : ''} glass`}>
+    <nav className={`${styles.navbar} ${isScrolled ? styles.scrolled : ''}`}>
       <div className={styles.navContainer}>
         <div className={styles.logo}>
           <Link to="home" smooth={true} duration={500}>
@@ -61,12 +61,13 @@ const Navbar = () => {
 
         <div className={styles.navActions}>
           <button onClick={toggleTheme} className={styles.themeToggle} aria-label="Toggle Theme">
-            {theme === 'light' ? <FiMoon size={20} /> : <FiSun size={20} />}
+            {theme === 'light' ? <FiMoon size={18} /> : <FiSun size={18} />}
           </button>
           
           <button 
             className={styles.mobileMenuBtn} 
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            aria-label="Toggle Navigation Menu"
           >
             {isMobileMenuOpen ? <FiX size={24} /> : <FiMenu size={24} />}
           </button>

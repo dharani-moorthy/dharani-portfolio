@@ -6,33 +6,40 @@
 
 .card {
   padding: 3rem;
-  border-radius: 20px;
+  border-radius: 16px;
 }
 
 .list {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 1.25rem;
 }
 
 .list li {
   display: flex;
   align-items: flex-start;
-  gap: 1.5rem;
-  font-size: 1.1rem;
+  gap: 1.2rem;
+  font-size: 1.05rem;
   color: var(--text-secondary);
   line-height: 1.6;
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.list li:last-child {
+  padding-bottom: 0;
+  border-bottom: none;
 }
 
 .icon {
   color: var(--accent-color);
-  font-size: 1.5rem;
+  font-size: 1.35rem;
   flex-shrink: 0;
-  margin-top: 0.2rem;
+  margin-top: 0.15rem;
 }
 
 @media (max-width: 768px) {
   .card {
-    padding: 2rem;
+    padding: 2rem 1.5rem;
   }
 }

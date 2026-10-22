@@ -3,17 +3,18 @@ import React, { createContext, useState, useEffect } from 'react';
 export const ThemeContext = createContext();
 
 export const ThemeProvider = ({ children }) => {
-  const [theme, setTheme] = useState('dark'); // Default to dark mode for premium feel
+  const [theme, setTheme] = useState('light');
 
   useEffect(() => {
-    // Check local storage for saved theme
     const savedTheme = localStorage.getItem('theme');
-    if (savedTheme) {
+    if (savedTheme === 'dark') {
+      // User requested white background as default
+      setTheme('light');
+      localStorage.setItem('theme', 'light');
+    } else if (savedTheme) {
       setTheme(savedTheme);
     } else {
-      // Check system preference
-      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-      setTheme(prefersDark ? 'dark' : 'light');
+      setTheme('light');
     }
   }, []);
 

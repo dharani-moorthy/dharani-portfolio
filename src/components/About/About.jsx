@@ -17,12 +17,12 @@ const About = () => {
       <div className={styles.container}>
         <motion.div 
           className={styles.summaryCard}
-          initial={{ opacity: 0, x: -50, skewX: 15 }}
-          whileInView={{ opacity: 1, x: 0, skewX: 0 }}
-          transition={{ type: 'spring', stiffness: 200, damping: 10 }}
-          viewport={{ once: true, amount: 0.3 }}
+          initial={{ opacity: 0, y: 25 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, ease: 'easeOut' }}
+          viewport={{ once: true, amount: 0.2 }}
         >
-          <div className="glass" style={{ padding: '2.5rem', borderRadius: '20px', height: '100%' }}>
+          <div className="glass" style={{ padding: '2.5rem', height: '100%' }}>
             <h3>Professional Summary</h3>
             <p>
               I am a <strong>B.E. Robotics and Automation graduate with Honours</strong>, deeply passionate about developing scalable web applications, robotics solutions, and software systems. I thrive at the intersection of hardware and software, bringing analytical problem-solving skills to every project.
@@ -35,19 +35,19 @@ const About = () => {
 
         <motion.div 
           className={styles.strengthsCard}
-          initial={{ opacity: 0, x: 50, skewX: -15 }}
-          whileInView={{ opacity: 1, x: 0, skewX: 0 }}
-          transition={{ type: 'spring', stiffness: 200, damping: 10, delay: 0.2 }}
-          viewport={{ once: true, amount: 0.3 }}
+          initial={{ opacity: 0, y: 25 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, ease: 'easeOut', delay: 0.15 }}
+          viewport={{ once: true, amount: 0.2 }}
         >
-          <div className="glass" style={{ padding: '2.5rem', borderRadius: '20px', height: '100%' }}>
+          <div className="glass" style={{ padding: '2.5rem', height: '100%' }}>
             <h3>Core Strengths</h3>
             <div className={styles.badges}>
               {strengths.map((strength, index) => (
                 <motion.span 
                   key={index} 
                   className={styles.badge}
-                  whileHover={{ scale: 1.1, backgroundColor: 'var(--accent-color)', color: '#fff' }}
+                  whileHover={{ y: -3, borderColor: 'var(--accent-color)' }}
                 >
                   {strength}
                 </motion.span>

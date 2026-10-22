@@ -13,6 +13,23 @@ const Hero = () => {
     await loadSlim(engine);
   }, []);
 
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: { staggerChildren: 0.12, delayChildren: 0.1 }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { 
+      opacity: 1, 
+      y: 0, 
+      transition: { duration: 0.5, ease: 'easeOut' } 
+    }
+  };
+
   return (
     <section id="home" className={styles.hero}>
       <div className={styles.particlesWrapper}>
@@ -27,11 +44,11 @@ const Hero = () => {
               modes: { repulse: { distance: 100, duration: 0.4 } },
             },
             particles: {
-              color: { value: '#3b82f6' },
-              links: { color: '#3b82f6', distance: 150, enable: true, opacity: 0.2, width: 1 },
-              move: { enable: true, speed: 1, outModes: { default: 'bounce' } },
-              number: { density: { enable: true, area: 800 }, value: 50 },
-              opacity: { value: 0.3 },
+              color: { value: '#2563eb' },
+              links: { color: '#2563eb', distance: 140, enable: true, opacity: 0.15, width: 1 },
+              move: { enable: true, speed: 0.8, outModes: { default: 'bounce' } },
+              number: { density: { enable: true, area: 800 }, value: 45 },
+              opacity: { value: 0.25 },
               shape: { type: 'circle' },
               size: { value: { min: 1, max: 3 } },
             },
@@ -45,34 +62,20 @@ const Hero = () => {
           className={styles.content}
           initial="hidden"
           animate="visible"
-          variants={{
-            hidden: { opacity: 0 },
-            visible: {
-              opacity: 1,
-              transition: { staggerChildren: 0.15 }
-            }
-          }}
+          variants={containerVariants}
         >
-          <motion.h2 
-            variants={{ hidden: { opacity: 0, x: -30, skewX: 20 }, visible: { opacity: 1, x: 0, skewX: 0, transition: { type: 'spring', stiffness: 300 } } }} 
-            className={styles.greeting}
-          >
+          <motion.h2 variants={itemVariants} className={styles.greeting}>
             Hello, I am
           </motion.h2>
-          <motion.h1 
-            variants={{ hidden: { opacity: 0, x: -30, skewX: 20 }, visible: { opacity: 1, x: 0, skewX: 0, transition: { type: 'spring', stiffness: 300 } } }} 
-            className={styles.name}
-          >
+
+          <motion.h1 variants={itemVariants} className={styles.name}>
             Dharani M
           </motion.h1>
           
-          <motion.div 
-            variants={{ hidden: { opacity: 0, x: -30, skewX: 20 }, visible: { opacity: 1, x: 0, skewX: 0, transition: { type: 'spring', stiffness: 300 } } }} 
-            className={styles.typeAnimation}
-          >
+          <motion.div variants={itemVariants} className={styles.typeAnimation}>
             <TypeAnimation
               sequence={[
-                'Robotics and Automation Engineer', 2000,
+                'Robotics & Automation Engineer', 2000,
                 'Full Stack Java Developer', 2000,
                 'Web Developer', 2000,
               ]}
@@ -82,17 +85,11 @@ const Hero = () => {
             />
           </motion.div>
 
-          <motion.p 
-            variants={{ hidden: { opacity: 0, x: -30, skewX: 20 }, visible: { opacity: 1, x: 0, skewX: 0, transition: { type: 'spring', stiffness: 300 } } }} 
-            className={styles.summary}
-          >
-            B.E. Robotics and Automation graduate with Honours, passionate about developing scalable web applications, robotics solutions, and software systems.
+          <motion.p variants={itemVariants} className={styles.summary}>
+            B.E. Robotics and Automation graduate with Honours, passionate about developing scalable web applications, robotics solutions, and high-performance software systems.
           </motion.p>
 
-          <motion.div 
-            variants={{ hidden: { opacity: 0, x: -30, skewX: 20 }, visible: { opacity: 1, x: 0, skewX: 0, transition: { type: 'spring', stiffness: 300 } } }} 
-            className={styles.buttons}
-          >
+          <motion.div variants={itemVariants} className={styles.buttons}>
             <Link to="contact" smooth={true} duration={500} className={`${styles.btn} ${styles.primaryBtn}`}>
               Hire Me
             </Link>
@@ -104,10 +101,7 @@ const Hero = () => {
             </a>
           </motion.div>
 
-          <motion.div 
-            variants={{ hidden: { opacity: 0, x: -30, skewX: 20 }, visible: { opacity: 1, x: 0, skewX: 0, transition: { type: 'spring', stiffness: 300 } } }} 
-            className={styles.socials}
-          >
+          <motion.div variants={itemVariants} className={styles.socials}>
             <a href="https://github.com/dharani-moorthy" target="_blank" rel="noreferrer" aria-label="GitHub"><FiGithub /></a>
             <a href="https://www.linkedin.com/in/dharani-m-505642302" target="_blank" rel="noreferrer" aria-label="LinkedIn"><FiLinkedin /></a>
             <a href="https://leetcode.com/u/Dharani_Moorthy/" target="_blank" rel="noreferrer" aria-label="LeetCode"><SiLeetcode /></a>
@@ -118,17 +112,17 @@ const Hero = () => {
 
         <motion.div 
           className={styles.imageWrapper}
-          initial={{ opacity: 0, scale: 0.9, y: 0 }}
+          initial={{ opacity: 0, scale: 0.95 }}
           animate={{ 
             opacity: 1, 
             scale: 1,
-            y: [-10, 10, -10]
+            y: [-6, 6, -6]
           }}
           transition={{ 
-            opacity: { duration: 0.8, delay: 0.2 },
-            scale: { duration: 0.8, delay: 0.2 },
+            opacity: { duration: 0.8 },
+            scale: { duration: 0.8 },
             y: {
-              duration: 4,
+              duration: 5,
               repeat: Infinity,
               ease: "easeInOut"
             }

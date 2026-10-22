@@ -4,7 +4,6 @@ import { FiGithub, FiExternalLink } from 'react-icons/fi';
 import styles from './Projects.module.css';
 
 const Projects = () => {
-  // Placeholder data - to be replaced with actual resume projects
   const projects = [
     {
       title: 'Event Management System',
@@ -67,6 +66,15 @@ const Projects = () => {
     }
   ];
 
+  const cardVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: { 
+      opacity: 1, 
+      y: 0, 
+      transition: { duration: 0.5, ease: 'easeOut' }
+    }
+  };
+
   return (
     <section id="projects" className="section">
       <h2 className="section-title">Featured Projects</h2>
@@ -80,7 +88,7 @@ const Projects = () => {
           hidden: {},
           visible: {
             transition: {
-              staggerChildren: 0.15
+              staggerChildren: 0.12
             }
           }
         }}
@@ -89,16 +97,8 @@ const Projects = () => {
           <motion.div 
             key={index} 
             className={`glass ${styles.card}`}
-            variants={{
-              hidden: { opacity: 0, x: -30, skewX: 10 },
-              visible: { 
-                opacity: 1, 
-                x: 0,
-                skewX: 0,
-                transition: { type: 'spring', stiffness: 300, damping: 15 }
-              }
-            }}
-            whileHover={{ scale: 1.03, x: 5, y: -5 }}
+            variants={cardVariants}
+            whileHover={{ y: -6, transition: { duration: 0.25 } }}
           >
             {project.image && (
               <div className={styles.imageContainer}>
@@ -130,7 +130,7 @@ const Projects = () => {
                   ))
                 ) : (
                   <a href={project.github} target="_blank" rel="noreferrer" className={styles.linkBtn}>
-                    <FiGithub /> GitHub
+                    <FiGithub /> Code
                   </a>
                 )}
                 {project.live !== '#' && (
