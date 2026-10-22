@@ -31,11 +31,11 @@ const Projects = () => {
     },
     {
       title: 'Karthikesh Robotics Corporate Website',
-      description: 'Designed and deployed the official corporate web presence for Karthikesh Robotics Pvt. Ltd., highlighting proprietary robotics kits, training programs, and services.',
+      description: 'Designed and deployed the official web portal & management system (KRPMS) for Karthikesh Robotics Pvt. Ltd., featuring autonomous agent telemetry, robotics kits, and cloud infrastructure.',
       techStack: ['Responsive Web', 'Modern UI', 'Full Stack Development'],
       github: 'https://github.com/dharani-moorthy',
       live: '#',
-      noImage: true
+      image: '/project-karthikesh.png'
     },
     {
       title: 'Event Management System',
