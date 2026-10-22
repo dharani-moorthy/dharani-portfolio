@@ -28,7 +28,7 @@ const About = () => {
               I am a <strong>B.E. Robotics and Automation graduate with Honours</strong>, deeply passionate about developing scalable web applications, robotics solutions, and software systems. I thrive at the intersection of hardware and software, bringing analytical problem-solving skills to every project.
             </p>
             <p className={styles.highlight}>
-              Currently working as a <strong>Web Development Intern at Karthikesh Robotics Pvt. Ltd.</strong>
+              Completed <strong>Web Development Internship at Karthikesh Robotics Pvt. Ltd.</strong> — engineered key projects including <strong>Roboverz</strong>, <strong>Rookies Community</strong>, corporate web platforms, and the <strong>Bumpy Controller</strong> web application & app.
             </p>
           </div>
         </motion.div>

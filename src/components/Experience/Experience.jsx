@@ -6,6 +6,16 @@ import styles from './Experience.module.css';
 const Experience = () => {
   const experiences = [
     {
+      role: 'Web Development Intern',
+      company: 'Karthikesh Robotics Pvt. Ltd.',
+      date: 'Internship (Completed)',
+      description: [
+        'Built and delivered full-stack web solutions and the official corporate company website.',
+        'Developed key web applications including Roboverz and the Rookies Community platform to facilitate collaboration and user engagement.',
+        'Engineered the Bumpy Controller web application and mobile app for seamless robotics hardware communication and control.'
+      ]
+    },
+    {
       role: 'Java Development Intern',
       company: 'Remote',
       date: '3 Months',

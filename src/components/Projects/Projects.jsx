@@ -6,6 +6,38 @@ import styles from './Projects.module.css';
 const Projects = () => {
   const projects = [
     {
+      title: 'Roboverz Platform',
+      description: 'An advanced robotics and educational web platform engineered during internship at Karthikesh Robotics, delivering interactive showcases and engaging digital learning tools.',
+      techStack: ['Web Development', 'React', 'Robotics Systems', 'UI/UX'],
+      github: 'https://github.com/dharani-moorthy',
+      live: '#',
+      noImage: true
+    },
+    {
+      title: 'Rookies Community Portal',
+      description: 'A community-driven digital portal designed for learners and tech enthusiasts to collaborate, share robotics prototypes, and access curated engineering resources.',
+      techStack: ['Web Application', 'Frontend Architecture', 'Community Platform'],
+      github: 'https://github.com/dharani-moorthy',
+      live: '#',
+      noImage: true
+    },
+    {
+      title: 'Bumpy Controller (Web & Mobile App)',
+      description: 'Developed a robust cross-platform control interface (web application and mobile app) for real-time telemetry, remote operations, and motor controls of the Bumpy robotics kit.',
+      techStack: ['Robotics IoT', 'Web App', 'Mobile App', 'Real-Time Control'],
+      github: 'https://github.com/dharani-moorthy',
+      live: '#',
+      noImage: true
+    },
+    {
+      title: 'Karthikesh Robotics Corporate Website',
+      description: 'Designed and deployed the official corporate web presence for Karthikesh Robotics Pvt. Ltd., highlighting proprietary robotics kits, training programs, and services.',
+      techStack: ['Responsive Web', 'Modern UI', 'Full Stack Development'],
+      github: 'https://github.com/dharani-moorthy',
+      live: '#',
+      noImage: true
+    },
+    {
       title: 'Event Management System',
       description: 'Developed a web-based Event Management System for managing event registrations, bookings, and scheduling. Implemented user authentication and database operations using MySQL to streamline event management.',
       techStack: ['Java', 'MySQL', 'HTML', 'CSS'],
