@@ -182,7 +182,7 @@
 
 .designGrid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 460px));
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   justify-content: center;
   gap: 2.2rem;
   max-width: 1200px;

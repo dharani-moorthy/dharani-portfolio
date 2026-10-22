@@ -87,6 +87,16 @@ const Projects = () => {
       description: 'Engineered a precision 3D CAD mechanical assembly of a Universal Joint in SolidWorks. Modeled individual components, applied mechanical mates, and conducted assembly motion studies.',
       techStack: ['SolidWorks', '3D CAD Modeling', 'Mechanical Assembly', 'Motion Study'],
       image: '/project-solidworks.png'
+    },
+    {
+      title: 'Autodesk Fusion 360 Design',
+      description: 'Modeled parametric 3D mechanical components in Autodesk Fusion 360, including bearing support blocks, flanged circular housings, and precision turned components with custom extrusions, fillets, and geometric constraints.',
+      techStack: ['Autodesk Fusion 360', '3D CAD Modeling', 'Parametric Design', 'Mechanical Components'],
+      images: [
+        '/project-fusion-1.png',
+        '/project-fusion-2.png',
+        '/project-fusion-3.png'
+      ]
     }
   ];
 
@@ -212,7 +222,7 @@ const Projects = () => {
           <span className="section-tag">CAD & 3D Modeling</span>
           <h2 className="section-title">Designing</h2>
           <p className="section-desc">
-            Precision mechanical assemblies and sheet metal components designed using CATIA V5 and SolidWorks.
+            Precision mechanical assemblies, sheet metal components, and 3D models engineered using CATIA V5, SolidWorks, and Autodesk Fusion 360.
           </p>
         </div>
 
