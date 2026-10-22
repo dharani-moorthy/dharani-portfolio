@@ -38,14 +38,6 @@ const Projects = () => {
       noImage: true
     },
     {
-      title: 'Event Management System',
-      description: 'Developed a web-based Event Management System for managing event registrations, bookings, and scheduling. Implemented user authentication and database operations using MySQL to streamline event management.',
-      techStack: ['Java', 'MySQL', 'HTML', 'CSS'],
-      github: 'https://github.com/dharani-moorthy',
-      live: '#',
-      image: '/project-event.png'
-    },
-    {
       title: 'Degree of Freedom (DOF) Calculator',
       description: 'Developed a GUI-based application to calculate Degree of Freedom using Gibbs Phase Rule. Designed an interactive interface with input validation to improve accuracy and user experience.',
       techStack: ['Python', 'Tkinter', 'Mechanical Engg'],
@@ -60,25 +52,6 @@ const Projects = () => {
       github: 'https://github.com/dharani-moorthy',
       live: '#',
       image: '/project-student.png'
-    },
-    {
-      title: 'Modern Calculator',
-      description: 'A responsive and intuitive modern calculator application built with a sleek visual interface, capable of performing standard arithmetic operations with real-time display.',
-      techStack: ['HTML5', 'CSS3', 'JavaScript'],
-      github: 'https://github.com/dharani-moorthy/HTML-CSS',
-      live: '#',
-      image: '/project-calculator.png'
-    },
-    {
-      title: 'SGPA Calculator',
-      description: 'A console-based academic utility tool designed to accurately calculate a student\'s Semester Grade Point Average (SGPA) by taking course credits and grades as command-line inputs.',
-      techStack: ['Java', 'Python'],
-      github: [
-        { label: 'Python', url: 'https://github.com/dharani-moorthy/Python-Project/blob/main/SGPAcalc.py' },
-        { label: 'Java', url: 'https://github.com/dharani-moorthy/Java-Project/blob/main/SGPAcalc.java' }
-      ],
-      live: '#',
-      noImage: true
     },
     {
       title: 'Fashion Store',
