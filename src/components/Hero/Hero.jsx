@@ -126,31 +126,7 @@ const Hero = () => {
         >
           <div className={styles.imageCard}>
             <img src="/profile-v2.png" alt="Dharani M" className={styles.profileImage} />
-            <div className={styles.imageOverlayGradient}></div>
           </div>
-
-          {/* Floating Badge 1: Education */}
-          <motion.div 
-            className={styles.badgeTop}
-            animate={{ y: [-5, 5, -5] }}
-            transition={{ duration: 4.5, repeat: Infinity, ease: 'easeInOut' }}
-          >
-            <span className={styles.badgeEmoji}>🎓</span>
-            <div className={styles.badgeContent}>
-              <strong>B.E. Honours</strong>
-              <small>Robotics & Automation</small>
-            </div>
-          </motion.div>
-
-          {/* Floating Badge 2: Status */}
-          <motion.div 
-            className={styles.badgeBottom}
-            animate={{ y: [5, -5, 5] }}
-            transition={{ duration: 4.5, repeat: Infinity, ease: 'easeInOut', delay: 1 }}
-          >
-            <span className={styles.pulseDot}></span>
-            <span>Available for Opportunities</span>
-          </motion.div>
         </motion.div>
       </div>
     </section>
