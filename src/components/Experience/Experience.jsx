@@ -8,7 +8,7 @@ const Experience = () => {
     {
       role: 'Web Development Intern',
       company: 'Karthikesh Robotics Pvt. Ltd.',
-      date: 'Internship (Completed)',
+      date: '3 Months',
       description: [
         'Built and delivered full-stack web solutions and the official corporate company website.',
         'Developed key web applications including Roboverz and the Rookies Community platform to facilitate collaboration and user engagement.',
