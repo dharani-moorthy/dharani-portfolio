@@ -1,45 +1,3 @@
-/* Category Filter Bar */
-.filterContainer {
-  display: flex;
-  justify-content: center;
-  gap: 0.8rem;
-  margin-bottom: 3rem;
-  flex-wrap: wrap;
-}
-
-.filterBtn {
-  padding: 0.65rem 1.4rem;
-  border-radius: 9999px;
-  background: var(--bg-secondary);
-  border: 1px solid var(--border-color);
-  color: var(--text-secondary);
-  font-size: 0.92rem;
-  font-weight: 600;
-  transition: all 0.22s ease;
-  cursor: pointer;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-.filterBtn:hover {
-  border-color: var(--accent-color);
-  color: var(--accent-color);
-  background: var(--bg-tertiary);
-}
-
-.activeFilter {
-  background: var(--accent-color);
-  border-color: var(--accent-color);
-  color: #ffffff;
-  box-shadow: 0 4px 14px rgba(37, 99, 235, 0.28);
-}
-
-.activeFilter:hover {
-  background: var(--accent-hover);
-  color: #ffffff;
-}
-
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -97,39 +55,6 @@
   display: flex;
   flex-direction: column;
   flex: 1;
-}
-
-/* Category Badge inside card */
-.categoryBadge {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.35rem;
-  font-size: 0.74rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  padding: 0.3rem 0.75rem;
-  border-radius: 6px;
-  margin-bottom: 0.85rem;
-  width: fit-content;
-}
-
-.hardwareBadge {
-  background: rgba(245, 158, 11, 0.12);
-  color: #d97706;
-  border: 1px solid rgba(245, 158, 11, 0.25);
-}
-
-[data-theme='dark'] .hardwareBadge {
-  background: rgba(245, 158, 11, 0.2);
-  color: #fbbf24;
-  border-color: rgba(245, 158, 11, 0.35);
-}
-
-.softwareBadge {
-  background: var(--accent-light);
-  color: var(--accent-color);
-  border: 1px solid var(--accent-border);
 }
 
 .title {
@@ -192,4 +117,26 @@
   border-color: var(--accent-color);
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25);
+}
+
+/* Designing Section under Projects */
+.designingSection {
+  margin-top: 5rem;
+  padding-top: 4rem;
+  border-top: 1px dashed var(--border-color);
+  width: 100%;
+}
+
+.designGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 460px));
+  justify-content: center;
+  gap: 2.2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.designCard {
+  width: 100%;
 }
