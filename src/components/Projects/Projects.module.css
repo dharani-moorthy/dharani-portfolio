@@ -35,7 +35,7 @@
   height: 220px;
   width: 100%;
   border-bottom: 1px solid var(--border-color);
-  overflow: hidden;
+  overflow: clip;
   background: var(--bg-secondary);
   position: relative;
 }
@@ -61,13 +61,30 @@
   padding: 0.7rem 1.4rem;
   background: var(--bg-secondary);
   border-bottom: 1px solid var(--border-color);
+  overflow: hidden;
+}
+
+/* Disable Chrome's automatic carousel/scroller detection */
+.imageContainer,
+.thumbnailRow,
+.thumbnailBtn {
+  scroll-snap-type: none !important;
+  scrollbar-width: none;
+}
+
+.imageContainer::-webkit-scrollbar,
+.thumbnailRow::-webkit-scrollbar,
+.thumbnailBtn::-webkit-scrollbar {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
 }
 
 .thumbnailBtn {
   flex: 1;
   height: 52px;
   border-radius: 8px;
-  overflow: hidden;
+  overflow: clip;
   border: 2px solid var(--border-color);
   cursor: pointer;
   padding: 0;
