@@ -62,12 +62,12 @@ const Projects = () => {
       image: '/project-student.png'
     },
     {
-      title: 'Simple Calculator',
-      description: 'A responsive and intuitive graphical calculator application built using Python GUI (Tkinter), capable of performing standard arithmetic operations with a clean interface.',
-      techStack: ['Python', 'Tkinter'],
-      github: 'https://github.com/dharani-moorthy/Python-Project/commit/c9d60858705beb5d8fd65865c4d7c6c29738d9e9',
+      title: 'Modern Calculator',
+      description: 'A responsive and intuitive modern calculator application built with a sleek visual interface, capable of performing standard arithmetic operations with real-time display.',
+      techStack: ['HTML5', 'CSS3', 'JavaScript'],
+      github: 'https://github.com/dharani-moorthy/HTML-CSS',
       live: '#',
-      noImage: true
+      image: '/project-calculator.png'
     },
     {
       title: 'SGPA Calculator',
