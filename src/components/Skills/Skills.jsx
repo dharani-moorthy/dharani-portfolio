@@ -39,10 +39,11 @@ const Skills = () => {
     {
       title: 'Hardware & Engineering',
       skills: [
-        { name: 'Arduino', level: 85 },
-        { name: 'Raspberry Pi', level: 80 },
+        { name: 'SolidWorks', level: 80 },
         { name: 'CATIA V5', level: 75 },
         { name: 'Fusion 360', level: 75 },
+        { name: 'Arduino', level: 85 },
+        { name: 'Raspberry Pi', level: 80 },
         { name: '3D Printing Prototyping', level: 85 }
       ]
     }
