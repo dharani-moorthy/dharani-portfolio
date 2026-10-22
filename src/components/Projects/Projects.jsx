@@ -73,6 +73,16 @@ const Projects = () => {
 
   const designProjects = [
     {
+      title: 'CATIA V5 Sheet Metal Design',
+      description: 'Engineered precision industrial sheet metal components in CATIA V5 using the Generative Sheetmetal Design workbench. Modeled parametric sheet metal parameters, complex bends, cutout reliefs, extruded walls, and forming geometries.',
+      techStack: ['CATIA V5', 'Sheet Metal Design', 'Generative Sheetmetal', 'Industrial CAD'],
+      images: [
+        '/project-catia-1.png',
+        '/project-catia-2.png',
+        '/project-catia-3.png'
+      ]
+    },
+    {
       title: 'SolidWorks Mechanical Assembly',
       description: 'Engineered a precision 3D CAD mechanical assembly of a Universal Joint in SolidWorks. Modeled individual components, applied mechanical mates, and conducted assembly motion studies.',
       techStack: ['SolidWorks', '3D CAD Modeling', 'Mechanical Assembly', 'Motion Study'],
@@ -87,6 +97,85 @@ const Projects = () => {
       y: 0, 
       transition: { duration: 0.5, ease: 'easeOut' }
     }
+  };
+
+  const ProjectCard = ({ project, isDesign = false }) => {
+    const images = project.images || (project.image ? [project.image] : []);
+    const [activeIdx, setActiveIdx] = React.useState(0);
+    const currentImg = images[activeIdx] || project.image;
+
+    return (
+      <motion.div 
+        className={`glass ${styles.card} ${isDesign ? styles.designCard : ''}`}
+        variants={cardVariants}
+        whileHover={{ y: -6, transition: { duration: 0.25 } }}
+      >
+        {currentImg && (
+          <div className={styles.imageContainer}>
+            <img src={currentImg} alt={project.title} className={styles.projectImage} />
+            {images.length > 1 && (
+              <span className={styles.imageGalleryBadge}>
+                {activeIdx + 1} / {images.length}
+              </span>
+            )}
+          </div>
+        )}
+
+        {images.length > 1 && (
+          <div className={styles.thumbnailRow}>
+            {images.map((img, idx) => (
+              <button
+                key={idx}
+                type="button"
+                className={`${styles.thumbnailBtn} ${idx === activeIdx ? styles.activeThumbnail : ''}`}
+                onClick={() => setActiveIdx(idx)}
+                aria-label={`View ${project.title} component ${idx + 1}`}
+              >
+                <img src={img} alt={`${project.title} preview ${idx + 1}`} />
+              </button>
+            ))}
+          </div>
+        )}
+
+        {!currentImg && !project.noImage && (
+          <div className={styles.imagePlaceholder}>
+            <span>Project Image</span>
+          </div>
+        )}
+        
+        <div className={styles.content}>
+          <h3 className={styles.title}>{project.title}</h3>
+          <p className={styles.description}>{project.description}</p>
+          
+          <div className={styles.techStack}>
+            {project.techStack.map((tech, i) => (
+              <span key={i} className={styles.tech}>{tech}</span>
+            ))}
+          </div>
+          
+          {!isDesign && project.github && (
+            <div className={styles.links}>
+              {Array.isArray(project.github) ? (
+                project.github.map((repo, i) => (
+                  <a key={i} href={repo.url} target="_blank" rel="noreferrer" className={styles.linkBtn}>
+                    <FiGithub /> GitHub ({repo.label})
+                  </a>
+                ))
+              ) : (
+                <a href={project.github} target="_blank" rel="noreferrer" className={styles.linkBtn}>
+                  <FiGithub /> Code
+                </a>
+              )}
+              {project.live && project.live !== '#' && (
+                <a href={project.live} target="_blank" rel="noreferrer" className={styles.linkBtn}>
+                  <FiExternalLink /> Live Demo
+                </a>
+              )}
+            </div>
+          )}
+        </div>
+      </motion.div>
+    );
   };
 
   return (
@@ -113,55 +202,7 @@ const Projects = () => {
         }}
       >
         {projects.map((project, index) => (
-          <motion.div 
-            key={index} 
-            className={`glass ${styles.card}`}
-            variants={cardVariants}
-            whileHover={{ y: -6, transition: { duration: 0.25 } }}
-          >
-            {project.image && (
-              <div className={styles.imageContainer}>
-                <img src={project.image} alt={project.title} className={styles.projectImage} />
-              </div>
-            )}
-            {!project.image && !project.noImage && (
-              <div className={styles.imagePlaceholder}>
-                <span>Project Image</span>
-              </div>
-            )}
-            
-            <div className={styles.content}>
-              <h3 className={styles.title}>{project.title}</h3>
-              <p className={styles.description}>{project.description}</p>
-              
-              <div className={styles.techStack}>
-                {project.techStack.map((tech, i) => (
-                  <span key={i} className={styles.tech}>{tech}</span>
-                ))}
-              </div>
-              
-              {project.github && (
-                <div className={styles.links}>
-                  {Array.isArray(project.github) ? (
-                    project.github.map((repo, i) => (
-                      <a key={i} href={repo.url} target="_blank" rel="noreferrer" className={styles.linkBtn}>
-                        <FiGithub /> GitHub ({repo.label})
-                      </a>
-                    ))
-                  ) : (
-                    <a href={project.github} target="_blank" rel="noreferrer" className={styles.linkBtn}>
-                      <FiGithub /> Code
-                    </a>
-                  )}
-                  {project.live && project.live !== '#' && (
-                    <a href={project.live} target="_blank" rel="noreferrer" className={styles.linkBtn}>
-                      <FiExternalLink /> Live Demo
-                    </a>
-                  )}
-                </div>
-              )}
-            </div>
-          </motion.div>
+          <ProjectCard key={index} project={project} />
         ))}
       </motion.div>
 
@@ -171,7 +212,7 @@ const Projects = () => {
           <span className="section-tag">CAD & 3D Modeling</span>
           <h2 className="section-title">Designing</h2>
           <p className="section-desc">
-            Precision mechanical assemblies and 3D modeling projects designed using SolidWorks.
+            Precision mechanical assemblies and sheet metal components designed using CATIA V5 and SolidWorks.
           </p>
         </div>
 
@@ -188,30 +229,7 @@ const Projects = () => {
           }}
         >
           {designProjects.map((project, index) => (
-            <motion.div 
-              key={index} 
-              className={`glass ${styles.card} ${styles.designCard}`}
-              variants={cardVariants}
-              whileHover={{ y: -6, transition: { duration: 0.25 } }}
-            >
-              {project.image && (
-                <div className={styles.imageContainer}>
-                  <img src={project.image} alt={project.title} className={styles.projectImage} />
-                </div>
-              )}
-              
-              <div className={styles.content}>
-                <h3 className={styles.title}>{project.title}</h3>
-                <p className={styles.description}>{project.description}</p>
-                
-                <div className={styles.techStack}>
-                  {project.techStack.map((tech, i) => (
-                    <span key={i} className={styles.tech}>{tech}</span>
-                  ))}
-                </div>
-                {/* No code button under designing */}
-              </div>
-            </motion.div>
+            <ProjectCard key={index} project={project} isDesign={true} />
           ))}
         </motion.div>
       </div>
