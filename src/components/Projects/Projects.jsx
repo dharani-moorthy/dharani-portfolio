@@ -46,6 +46,14 @@ const Projects = () => {
       image: '/project-event.png'
     },
     {
+      title: 'SolidWorks Mechanical Assembly',
+      description: 'Engineered a precision 3D CAD mechanical assembly of a Universal Joint in SolidWorks. Modeled individual components, applied mechanical mates, and conducted assembly motion studies.',
+      techStack: ['SolidWorks', '3D CAD Modeling', 'Mechanical Assembly', 'Motion Study'],
+      github: 'https://github.com/dharani-moorthy',
+      live: '#',
+      image: '/project-solidworks.png'
+    },
+    {
       title: 'Degree of Freedom (DOF) Calculator',
       description: 'Developed a GUI-based application to calculate Degree of Freedom using Gibbs Phase Rule. Designed an interactive interface with input validation to improve accuracy and user experience.',
       techStack: ['Python', 'Tkinter'],
